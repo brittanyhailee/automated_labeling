@@ -1,12 +1,19 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+from formatting import read_recall_new
+import json
+
 import torch
 
 import numpy as np
 print(np.__version__)
 
 app = Flask(__name__)
+# CORS(app, resources={r"/*": {'Access-Control-Allow-Origin': "*"}})
 CORS(app)
 
 model_name = 'brittanyhlc/automated-labeling-distilbert'
@@ -59,13 +66,24 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.json
-    # text = data['text']
-    text = data.get('text', '')
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file provided'}), 400
 
-    if not text:
-        return jsonify({'error': 'No text provided'}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    content = file.read().decode('utf-8')
 
+    sentences = read_recall_new(content)
+    print('sentences:', sentences)
+    content_to_string = json.dumps(content)
+    # print(content_to_string) 
+    # print(content_to_string)
+    return jsonify({'prediction': content})
+   
+
+    text = 'hi this is fun'
     inputs = tokenizer(text, return_tensors='pt')
     with torch.no_grad():
         outputs = model(**inputs)
@@ -73,5 +91,17 @@ def predict():
 
     return jsonify({'prediction': categories[predictions]})
 
+    # return jsonify({'prediction': f'File {filename} received'})
+
+    # with open(filename, 'r') as file:
+    #     file.readlines()
+    #     # print(file)
+    
+    # return jsonify({'prediction': file})
+
+    
+
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5000, debug=True)
+
+    
