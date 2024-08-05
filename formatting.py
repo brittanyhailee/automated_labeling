@@ -1,11 +1,11 @@
-def read_recall_new(content): # Differnet method for our very own hardworking transcribers!
+def read_recall_new(file_content): # Differnet method for our very own hardworking transcribers!
     
     transcriptions = []
-    # with open(file_path, 'r', encoding='utf-8') as file:
-    #     lines = file.read_lines()
-    # # lines = content
+    lines = file_content.splitlines()
+
+    # lines = content
     # print(lines)
-    lines = content
+    # lines = content
 
     timestamps, text = [], []
     curr_start_time = None # using this logic as we have multiline potential
@@ -32,3 +32,45 @@ def read_recall_new(content): # Differnet method for our very own hardworking tr
 
     # print('the lines:', transcriptions)
     return transcriptions
+
+
+def transcript_to_paragraph(file): 
+    text = []
+    
+    # Read the content from the file-like object
+    file_content = file.read().decode('utf-8')
+    print("Raw file content:", file_content)
+    
+    # Split the content into lines
+    lines = file_content.splitlines()
+    
+    for line in lines:
+        line = line.strip()
+        
+        if line and not line.startswith("00:"):  # remove timestamps
+            text.append(line)
+    
+    # Join text and replace new lines with spaces
+    paragraph = " ".join(text)
+    paragraph = paragraph.replace('\n', ' ')
+    print(paragraph)
+    return paragraph
+
+
+# def transcript_to_paragraph(file_content):
+#     text = []
+#     paragraph = []
+
+#     # lines = file_content.splitlines()
+#     for line in file_content:
+#         line = line.strip()
+
+#         if line and not line.startswith("00:"):
+#             text.append(line)
+#             # parts = [part.strip() for part in line.split('.') if part.strip()]
+#             # paragraph.extend(text)
+
+#     # paragraph = paragraph.replace('\n', ' ')
+#     paragraph = " ".join(text)
+    
+#     return paragraph

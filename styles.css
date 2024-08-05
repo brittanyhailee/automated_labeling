@@ -1,0 +1,23 @@
+html {
+    --bg-color: #eee9dd;
+}
+
+body {
+    background-color: var(--bg-color);
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+h1 {
+    font-family: "VT323", monospace;
+    font-size: 4em;
+}
+
+
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
