@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS 
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 import nltk
@@ -6,6 +6,7 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 from formatting import read_recall_new, transcript_to_paragraph
 import json
+import os
 
 import torch
 
@@ -73,7 +74,6 @@ def classify(sentence):
     # Perform inference
     model.eval()
 
-
     with torch.no_grad():
         outputs = model(input_ids, attention_mask=attention_mask)
         logits = outputs.logits
@@ -97,7 +97,7 @@ def predict():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     
-    filename = file.filename
+    input_filename = file.filename
 
     file_content = file.read().decode('utf-8')
     transcriptions = read_recall_new(file_content)
@@ -105,36 +105,18 @@ def predict():
     paragraph = transcript_to_paragraph(file)
     paragraph = sent_tokenize(paragraph)
 
-    for lines in paragraph: 
-        print(lines)
-        classified = classify(lines)
-        newFilename = filename.replace('transcript.txt', 'classified.txt')
-        with open(newFilename, 'a') as file:
-            file.write(lines + '\n' + classified + '\n' )
-
-    # print(f'the paragraph {paragraph}')
-    # print('do u have to let it linger')
-
-
-    return jsonify({'prediction': transcriptions})
-   
-
-    text = 'hi this is fun'
-    inputs = tokenizer(text, return_tensors='pt')
-    with torch.no_grad():
-        outputs = model(**inputs)
-    predictions = outputs.logits.argmax(dim=1).item()
-
-    return jsonify({'prediction': categories[predictions]})
-
-    # return jsonify({'prediction': f'File {filename} received'})
-
-    # with open(filename, 'r') as file:
-    #     file.readlines()
-    #     # print(file)
+    output_filename = input_filename.replace('transcript.txt', 'classified.txt')
     
-    # return jsonify({'prediction': file})
 
+    for lines in paragraph: 
+        # print(lines)
+        classified = classify(lines)
+        with open(output_filename, 'a') as outfile:
+            outfile.write(lines + '\n' + classified + '\n' )
+    
+    print('output filename is ' + output_filename)
+    return jsonify({'classified_file': output_filename})
+   
     
 
 if __name__ == '__main__':
