@@ -1,12 +1,19 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+from formatting import read_recall_new, transcript_to_paragraph
+import json
+
 import torch
 
 import numpy as np
 print(np.__version__)
 
 app = Flask(__name__)
+# CORS(app, resources={r"/*": {'Access-Control-Allow-Origin': "*"}})
 CORS(app)
 
 model_name = 'brittanyhlc/automated-labeling-distilbert'
@@ -56,16 +63,63 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
  'adopt-a-pet_resized_1280-720',
  'popular_ep-05_2131-2308_part2_resized_1280-720',
  'henry-beer-commercial_resized_1280-720']
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+def classify(sentence):
+    inputs = tokenizer(sentence, return_tensors='pt', truncation=True, padding=True, max_length=228)
+    input_ids = inputs['input_ids'].to(device)
+    attention_mask = inputs['attention_mask'].to(device)
+
+    # Perform inference
+    model.eval()
+
+
+    with torch.no_grad():
+        outputs = model(input_ids, attention_mask=attention_mask)
+        logits = outputs.logits
+        predictions = torch.argmax(logits, dim=1)
+
+    class_labels = [label for label in categories]
+
+    predicted_class = class_labels[predictions.item()]
+    print(f"\t-predicted class: {predicted_class}\n")
+    
+    return f"\t-predicted class: {predicted_class}\n"
+
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.json
-    # text = data['text']
-    text = data.get('text', '')
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file provided'}), 400
 
-    if not text:
-        return jsonify({'error': 'No text provided'}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    filename = file.filename
 
+    file_content = file.read().decode('utf-8')
+    transcriptions = read_recall_new(file_content)
+    file.seek(0)  # Reset  file pointer to beginning after reading for processing
+    paragraph = transcript_to_paragraph(file)
+    paragraph = sent_tokenize(paragraph)
+
+    for lines in paragraph: 
+        print(lines)
+        classified = classify(lines)
+        newFilename = filename.replace('transcript.txt', 'classified.txt')
+        with open(newFilename, 'a') as file:
+            file.write(lines + '\n' + classified + '\n' )
+
+    # print(f'the paragraph {paragraph}')
+    # print('do u have to let it linger')
+
+
+    return jsonify({'prediction': transcriptions})
+   
+
+    text = 'hi this is fun'
     inputs = tokenizer(text, return_tensors='pt')
     with torch.no_grad():
         outputs = model(**inputs)
@@ -73,5 +127,17 @@ def predict():
 
     return jsonify({'prediction': categories[predictions]})
 
+    # return jsonify({'prediction': f'File {filename} received'})
+
+    # with open(filename, 'r') as file:
+    #     file.readlines()
+    #     # print(file)
+    
+    # return jsonify({'prediction': file})
+
+    
+
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5000, debug=True)
+
+    
