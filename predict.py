@@ -17,6 +17,7 @@ app = Flask(__name__)
 # CORS(app, resources={r"/*": {'Access-Control-Allow-Origin': "*"}})
 CORS(app)
 
+classified_file_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/classified-transcripts'
 model_name = 'brittanyhlc/automated-labeling-distilbert'
 tokenizer = DistilBertTokenizer.from_pretrained(model_name)
 model = DistilBertForSequenceClassification.from_pretrained(model_name)
@@ -106,11 +107,13 @@ def predict():
     paragraph = transcript_to_paragraph(file)
     paragraph = sent_tokenize(paragraph)
 
+    if not os.path.isdir(classified_file_path):
+        os.makedirs(classified_file_path)
+  
     output_filename = input_filename.replace('transcript.txt', 'classified.txt')
-    
+    output_filename = os.path.join(classified_file_path, output_filename)
 
     for lines in paragraph: 
-        # print(lines)
         classified = classify(lines)
         with open(output_filename, 'a') as outfile:
             outfile.write(lines + '\n' + classified + '\n' )

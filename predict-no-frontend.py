@@ -9,12 +9,24 @@ import json
 import os
 import torch
 import numpy as np
+import chardet
+
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as file: 
+        detector = chardet.universaldetector.UniversalDetector() 
+        for line in file:
+            detector.feed(line)
+            if detector.done:
+                break
+
+    detector.close()
+    return detector.result['encoding']
 
 
-def transcript_to_paragraph(file_path):
+def transcript_to_paragraph(file_path, encoding):
     text = []
     
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding=encoding) as file:
         lines = file.readlines()
     
     for line in lines:
@@ -84,10 +96,16 @@ classified_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automate
 
 for filename in os.listdir(new_transcriptions_path):
     file_path = os.path.join(new_transcriptions_path, filename)
-    paragraph = transcript_to_paragraph(file_path)
+    encoding = detect_encoding(file_path)
+    print(f'the encoding is {encoding}')
+
+
+for filename in os.listdir(new_transcriptions_path):
+    encoding = detect_encoding(file_path)
+    file_path = os.path.join(new_transcriptions_path, filename)
+    paragraph = transcript_to_paragraph(file_path, encoding)
     paragraph = sent_tokenize(paragraph)
 
-    # output_filename = filename.replace('transcript.txt', 'classified.txt')
     for lines in paragraph: 
         classified = classify(lines)
         output_filename = filename.replace('transcript.txt', 'classified.txt')
