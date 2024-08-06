@@ -4,18 +4,31 @@ from transformers import DistilBertTokenizer, DistilBertForSequenceClassificatio
 import nltk
 nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
-from formatting import read_recall_new, transcript_to_paragraph
+from predict import classify
 import json
 import os
-
 import torch
-
 import numpy as np
-print(np.__version__)
 
-app = Flask(__name__)
-# CORS(app, resources={r"/*": {'Access-Control-Allow-Origin': "*"}})
-CORS(app)
+
+def transcript_to_paragraph(file_path):
+    text = []
+    
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+    
+    for line in lines:
+        line = line.strip()
+            
+        if line and not line.startswith("00:"): # remove timestamps
+            text.append(line)
+            
+    paragraph = " ".join(text)
+    paragraph.replace('\n', ' ')
+    
+    return paragraph
+
+
 
 model_name = 'brittanyhlc/automated-labeling-distilbert'
 tokenizer = DistilBertTokenizer.from_pretrained(model_name)
@@ -66,60 +79,24 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
  'henry-beer-commercial_resized_1280-720']
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+new_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/new-transcripts'
+classified_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/c-transcripts'
 
-def classify(sentence):
-    inputs = tokenizer(sentence, return_tensors='pt', truncation=True, padding=True, max_length=228)
-    input_ids = inputs['input_ids'].to(device)
-    attention_mask = inputs['attention_mask'].to(device)
-
-    # Perform inference
-    model.eval()
-
-    with torch.no_grad():
-        outputs = model(input_ids, attention_mask=attention_mask)
-        logits = outputs.logits
-        predictions = torch.argmax(logits, dim=1)
-
-    class_labels = [label for label in categories]
-
-    predicted_class = class_labels[predictions.item()]
-    # print(f"\t-predicted class: {predicted_class}\n")
-    
-    return f"\t-predicted class: {predicted_class}\n"
-
-
-
-@app.route('/predict', methods=['POST'])
-def predict():
-    if 'file' not in request.files:
-        return jsonify({'error': 'No file provided'}), 400
-
-    file = request.files['file']
-    if file.filename == '':
-        return jsonify({'error': 'No selected file'}), 400
-    
-    input_filename = file.filename
-
-    file_content = file.read().decode('utf-8')
-    transcriptions = read_recall_new(file_content)
-    file.seek(0)  # Reset  file pointer to beginning after reading for processing
-    paragraph = transcript_to_paragraph(file)
+for filename in os.listdir(new_transcriptions_path):
+    file_path = os.path.join(new_transcriptions_path, filename)
+    paragraph = transcript_to_paragraph(file_path)
     paragraph = sent_tokenize(paragraph)
 
-    output_filename = input_filename.replace('transcript.txt', 'classified.txt')
-    
-
+    # output_filename = filename.replace('transcript.txt', 'classified.txt')
     for lines in paragraph: 
-        # print(lines)
         classified = classify(lines)
+        output_filename = filename.replace('transcript.txt', 'classified.txt')
         with open(output_filename, 'a') as outfile:
             outfile.write(lines + '\n' + classified + '\n' )
-    
-    print('output filename is ' + output_filename)
-    return jsonify({'categorized': output_filename})
+
    
 
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+
+
 
     

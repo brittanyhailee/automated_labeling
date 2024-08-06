@@ -1,0 +1,168 @@
+Okay, so it started with the cartoon show, the kid detectives in the middle school, they were trying to find a virtual pet for the principal.
+	-predicted class: fillmore_ep-7_236-406_part1_resized_1280-720
+
+And then it cut to the commercial with like, it was kind of humorous people rolling sandwich ingredients.
+	-predicted class: area-wide-exterminators_resized_1280-720
+
+I thought it was a good time slot because they just introduced, or they just said the name.
+	-predicted class: go-wireless_resized_1280-720
+
+Okay, so it started with the cartoon show, the kid detectives in the middle school, they were trying to find a virtual pet for the principal.
+	-predicted class: fillmore_ep-7_236-406_part1_resized_1280-720
+
+They gave them a name.
+	-predicted class: adopt-a-pet_resized_1280-720
+
+And then it cut to the commercial with like, it was kind of humorous people rolling sandwich ingredients.
+	-predicted class: area-wide-exterminators_resized_1280-720
+
+So it's kind of a hook.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I thought it was a good time slot because they just introduced, or they just said the name.
+	-predicted class: go-wireless_resized_1280-720
+
+And then it was still kind of with the humorous cartoon vibe.
+	-predicted class: corner-gas_s1-ep1_636-805_part1_resized_1280-720
+
+They gave them a name.
+	-predicted class: adopt-a-pet_resized_1280-720
+
+Then it went to, I think it was the same show, they were talking to the mom, but it cut like in the middle of the conversation.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+So it's kind of a hook.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+And then it was still kind of with the humorous cartoon vibe.
+	-predicted class: corner-gas_s1-ep1_636-805_part1_resized_1280-720
+
+So I said it was a bad time slot for the commercial that came afterwards.
+	-predicted class: go-wireless_resized_1280-720
+
+Then it went to, I think it was the same show, they were talking to the mom, but it cut like in the middle of the conversation.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I'm not sure if I even remember what the commercial was.
+	-predicted class: crazy-gideon_resized_1280-720
+
+So I said it was a bad time slot for the commercial that came afterwards.
+	-predicted class: go-wireless_resized_1280-720
+
+I just, yeah, I just thought it came at a bad time because it didn't feel like the kids and the mom hadn't finished their conversation.
+	-predicted class: corner-gas_s2-ep1_805-935_part2_resized_1280-720
+
+I'm not sure if I even remember what the commercial was.
+	-predicted class: crazy-gideon_resized_1280-720
+
+And then the other show, I think the first clip I saw was, there were just the post-apocalyptic kids in the park.
+	-predicted class: corner-gas_s1-ep1_636-805_part2_resized_1280-720
+
+I just, yeah, I just thought it came at a bad time because it didn't feel like the kids and the mom hadn't finished their conversation.
+	-predicted class: corner-gas_s2-ep1_805-935_part2_resized_1280-720
+
+And it was just kind of like a sweet or like reminiscent feeling, maybe sad.
+	-predicted class: popular_ep-05_2131-2308_part2_resized_1280-720
+
+And then the other show, I think the first clip I saw was, there were just the post-apocalyptic kids in the park.
+	-predicted class: corner-gas_s1-ep1_636-805_part2_resized_1280-720
+
+And then I think it cut to, I'm trying to remember the commercial.
+	-predicted class: crazy-gideon_resized_1280-720
+
+And it was just kind of like a sweet or like reminiscent feeling, maybe sad.
+	-predicted class: popular_ep-05_2131-2308_part2_resized_1280-720
+
+Oh, I think it was maybe like the words on the butt.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+And then I think it cut to, I'm trying to remember the commercial.
+	-predicted class: crazy-gideon_resized_1280-720
+
+And I'm not even sure what they were trying to sell.
+	-predicted class: the-riches_s2-ep1_3244-3415_part1_resized_1280-720
+
+Oh, I think it was maybe like the words on the butt.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I just remember thinking this is a little bit ridiculous for the kind of somber TV show or you know where I'm watching kids swing on a swing set.
+	-predicted class: the-tribe_episode-1_1202-1332_part-1_resized_1280-720
+
+And I'm not even sure what they were trying to sell.
+	-predicted class: the-riches_s2-ep1_3244-3415_part1_resized_1280-720
+
+Yeah, I think for the post-apocalyptic show, there weren't any commercials that kind of matched the tone.
+	-predicted class: crazy-gideon_resized_1280-720
+
+I just remember thinking this is a little bit ridiculous for the kind of somber TV show or you know where I'm watching kids swing on a swing set.
+	-predicted class: the-tribe_episode-1_1202-1332_part-1_resized_1280-720
+
+So I kind of almost said that they were all bad timeslots I think just because most of the commercials are a bit ridiculous and the show, even though maybe geared towards teenagers, I just felt like it was a more serious tone.
+	-predicted class: cie-perfume_resized_1280-720
+
+Yeah, I think for the post-apocalyptic show, there weren't any commercials that kind of matched the tone.
+	-predicted class: crazy-gideon_resized_1280-720
+
+Yeah, the second clip I'm thinking of was kind of in the car.
+	-predicted class: the-tribe_episode-1_1202-1332_part-2_resized_1280-720
+
+So I kind of almost said that they were all bad timeslots I think just because most of the commercials are a bit ridiculous and the show, even though maybe geared towards teenagers, I just felt like it was a more serious tone.
+	-predicted class: cie-perfume_resized_1280-720
+
+I think the girlfriend and boyfriend, or the girlfriend was upset and I'm not really sure what they were talking about.
+	-predicted class: popular_ep-05_2131-2308_part2_resized_1280-720
+
+Yeah, the second clip I'm thinking of was kind of in the car.
+	-predicted class: the-tribe_episode-1_1202-1332_part-2_resized_1280-720
+
+I don't remember the commercial that came after that.
+	-predicted class: crazy-gideon_resized_1280-720
+
+I think the girlfriend and boyfriend, or the girlfriend was upset and I'm not really sure what they were talking about.
+	-predicted class: popular_ep-05_2131-2308_part2_resized_1280-720
+
+Yeah.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I don't remember the commercial that came after that.
+	-predicted class: crazy-gideon_resized_1280-720
+
+Then there was a clip of the guy getting busted and then he lost his girlfriend in the cartoon show.
+	-predicted class: corner-gas_s1-ep1_636-805_part1_resized_1280-720
+
+Yeah.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+Truly do not remember what commercial came after that.
+	-predicted class: crazy-gideon_resized_1280-720
+
+Then there was a clip of the guy getting busted and then he lost his girlfriend in the cartoon show.
+	-predicted class: corner-gas_s1-ep1_636-805_part1_resized_1280-720
+
+What else happens?
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+Truly do not remember what commercial came after that.
+	-predicted class: crazy-gideon_resized_1280-720
+
+I don't know.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+What else happens?
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I don't know.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I wish I remembered more, but there were definitely some times this whole round, it was a bad time slot either because it just interrupted the TV show at a really odd time or it just didn't match the seriousness of the post-apocalyptic show, even though now that I'm thinking about it probably is for teenagers and they don't need to have serious insurance commercials or something.
+	-predicted class: local-commercial-fail_resized_1280-720
+
+Yeah, just didn't match the tone to me, but that's it.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+I wish I remembered more, but there were definitely some times this whole round, it was a bad time slot either because it just interrupted the TV show at a really odd time or it just didn't match the seriousness of the post-apocalyptic show, even though now that I'm thinking about it probably is for teenagers and they don't need to have serious insurance commercials or something.
+	-predicted class: local-commercial-fail_resized_1280-720
+
+Yeah, just didn't match the tone to me, but that's it.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
