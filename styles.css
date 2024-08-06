@@ -18,9 +18,10 @@ h1 {
 
 h4 {
     margin: 0;
-    margin-bottom: 50px;
-    font-size: 18px;
+    margin-bottom: 40px;
+    font-size: 20px;
     font-family: "VT323", Arial;
+
 }
 
 
@@ -110,42 +111,21 @@ h4 {
     width: 100%;
     
 }
-/* .upload-btn::after {
-    display: inline-block;
-    align-self: center;
-    content: '';
+
+.footer {
     position: absolute;
-    height: 4px;
-    align-content: center;
+    background-color: black;
+    color:white;
     bottom: 0;
-    width: 100%;
-    margin: auto;
-    background: black;
-    transition: width .2s;
-} */
-
-
-/* .upload-btn:hover:after {
-    display: inline-block;
-    width: 100%;
-} */
-
-/* #upload {
-    
-    border-style: none;
-    border: none;
+    left: 0;
+    right: 0;
+    height: 27px;
     font-size: 20px;
-    margin: 0;
-    background-color: transparent;
-    width: 100px;
-}  */
-
-
-
-/* #upload:hover {
-    
-} */
-
+    text-align: center;
+    justify-content: center;
+    font-family: "VT323", Arial;
+    margin-bottom: 0;
+}
 
 /* Fonts */
 .vt323-regular {
