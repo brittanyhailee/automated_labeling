@@ -28,9 +28,11 @@
             <button id="upload" type="button" onclick="sendFile(event)">Upload!</button>
         </div>
     </form>
+    <p id="result"></p>
 
 
     <script>
+
         document.getElementById('file').addEventListener('change', function(event) {
             var fileName = event.target.files[0] ? event.target.files[0].name : 'No file chosen';
             document.getElementById('file-name').textContent = fileName;
@@ -53,8 +55,6 @@
             console.error('WebSocket Error: ', error);
         };
 
-
-        let newFile = "";
         async function sendFile(event) {
             event.preventDefault()
             const formData = new FormData(document.getElementById('uploadForm'))
@@ -69,13 +69,14 @@
                 }
 
                 const data = await response.json();
+                // newFile = data.categorized;
               
                 
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-
+ 
       
     </script>
 </body>
