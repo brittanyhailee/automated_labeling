@@ -1,6 +1,8 @@
 ![github-banner](https://github.com/user-attachments/assets/b5193604-1138-4aa5-8ef4-fb59e0bcba57)
 #### Brittany Chan, Joel Baltodano, Sakshi Nikte, and Audrey Reinhard 
 #### In collaboration with Halle Dimsdale-Zucker for UCR Data Science Pathway Fellowship 2024 
+## About this project
+* This project aims to observe neural signals in the brain by asking participants in the experiment to watch 3 ten minute video clips composed of 48 segments. The participants do their recall process in the fMRI machine where their audio is recorded to record what segment they recall and align them to the fMRI images. Our task is to automate the process of classifying recall transcriptions and propose a tool that future researchers may build on to help in automating categorization in their experiments.
 ## Set-Up
 * Used Dependencies/Modules:
   * **flask, flask_cors**
