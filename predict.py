@@ -9,6 +9,7 @@ import json
 import os
 import torch
 import numpy as np
+import pandas as pd 
 
 print(np.__version__)
 
@@ -84,8 +85,8 @@ def classify(sentence):
 
     predicted_class = class_labels[predictions.item()]
     # print(f"\t-predicted class: {predicted_class}\n")
-    
-    return f"\t-predicted class: {predicted_class}\n"
+    # return f"\t-predicted class: {predicted_class}\n"
+    return predicted_class
 
 
 
@@ -99,24 +100,48 @@ def predict():
         return jsonify({'error': 'No selected file'}), 400
     
     input_filename = file.filename
-
-    file_content = file.read().decode('utf-8')
-    transcriptions = read_recall_new(file_content)
-    file.seek(0)  # Reset  file pointer to beginning after reading for processing
-    paragraph = transcript_to_paragraph(file)
-    paragraph = sent_tokenize(paragraph)
-
     if not os.path.isdir(classified_file_path):
-        os.makedirs(classified_file_path)
-  
-    output_filename = input_filename.replace('transcript.txt', 'classified.txt')
-    output_filename = os.path.join(classified_file_path, output_filename)
+            os.makedirs(classified_file_path)
 
-    for lines in paragraph: 
-        classified = classify(lines)
-        with open(output_filename, 'a') as outfile:
-            outfile.write(lines + '\n' + classified + '\n' )
+    if input_filename.endswith('.txt'): 
+        file_content = file.read().decode('utf-8')
+        transcriptions = read_recall_new(file_content)
+        file.seek(0)  # Reset  file pointer to beginning after reading for processing
+        paragraph = transcript_to_paragraph(file)
+        paragraph = sent_tokenize(paragraph)
     
+        output_filename = input_filename.replace('transcript.txt', 'classified.txt')
+        output_filename = os.path.join(classified_file_path, output_filename)
+
+        for lines in paragraph: 
+            classified = "\t-predicted class: "
+
+            classified += classify(lines)
+            with open(output_filename, 'a') as outfile:
+                outfile.write(lines + '\n' + classified + '\n\n' )
+
+    elif input_filename.endswith('.csv'): 
+        input_file_path = os.path.join(classified_file_path, input_filename)  # Combine with classified_file_path
+        file.save(input_file_path) 
+        transcript_df = pd.read_csv(input_file_path)
+        labels = ['run_ID', 'segment_name']
+        transcript_df.drop(labels, axis=1,inplace=True)
+        transcript_df.dropna(subset=['text'], inplace=True)
+        output_filename = input_filename.replace('.csv', '(classified).csv')
+        output_filename = os.path.join(classified_file_path, output_filename)
+        new_df = pd.DataFrame(columns=['starttime', 'endtime','segment_id','text'])
+        rows = []
+
+        for index, row in transcript_df.iterrows():
+            sentence = row['text']
+            rows.append({'starttime': str(row['starttime']), 'endtime': str(row['endtime']),'segment_name': classify(sentence), 'text': row['text']})
+            # classifications.append(classify(sentence))
+
+        new_df = pd.concat([new_df, pd.DataFrame(rows)], ignore_index=True)
+        new_df.to_csv(output_filename, index=False)
+        os.remove(input_file_path)
+
+        
     print('output filename is ' + output_filename)
     return jsonify({'categorized': output_filename})
    

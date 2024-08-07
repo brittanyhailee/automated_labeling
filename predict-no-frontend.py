@@ -25,7 +25,6 @@ def detect_encoding(file_path):
 
 def transcript_to_paragraph(file_path, encoding):
     text = []
-    
     with open(file_path, 'r', encoding=encoding) as file:
         lines = file.readlines()
     
