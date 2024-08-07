@@ -7,10 +7,9 @@ from nltk.tokenize import sent_tokenize
 from formatting import read_recall_new, transcript_to_paragraph
 import json
 import os
-
 import torch
-
 import numpy as np
+
 print(np.__version__)
 
 app = Flask(__name__)
