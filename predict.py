@@ -134,7 +134,7 @@ def predict():
 
         for index, row in transcript_df.iterrows():
             sentence = row['text']
-            rows.append({'starttime': str(row['starttime']), 'endtime': str(row['endtime']),'segment_name': classify(sentence), 'text': row['text']})
+            rows.append({'starttime': str(row['starttime']), 'endtime': str(row['endtime']),'segment_id': classify(sentence), 'text': row['text']})
             # classifications.append(classify(sentence))
 
         new_df = pd.concat([new_df, pd.DataFrame(rows)], ignore_index=True)
