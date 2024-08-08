@@ -14,8 +14,8 @@ Our team was tasked with automating the process of classifying the recall transc
   * **os**
   * **torch**
 
-#### Downloads:
-If you dont have it already, install Python [here](https://www.python.org/downloads/).
+### Downloads:
+If you don't have it already, install Python [here](https://www.python.org/downloads/).
 
 Using **pip**:
 * `pip install transformers pandas numpy torch`
