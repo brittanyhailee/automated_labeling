@@ -1,15 +1,30 @@
 ![github-banner](https://github.com/user-attachments/assets/b5193604-1138-4aa5-8ef4-fb59e0bcba57)
 #### Brittany Chan, Joel Baltodano, Sakshi Nikte, and Audrey Reinhard 
 #### In collaboration with Halle Dimsdale-Zucker for UCR Data Science Pathway Fellowship 2024 
-## About this project
-* This project aims to observe neural signals in the brain by asking participants in the experiment to watch 3 ten minute video clips composed of 48 segments. The participants do their recall process in the fMRI machine where their audio is recorded to record what segment they recall and align them to the fMRI images. Our task is to automate the process of classifying recall transcriptions and propose a tool that future researchers may build on to help in automating categorization in their experiments.
-## Set-Up
-* Used Dependencies/Modules:
+## About This Project
+Halle Dimsdale-Zucker of the UCR Psychology Dept. is performing ongoing research to study the recall of complex content in the form of TV shows and commercials. Her goal is to analyze shared neural signals of multiple participants who are exposed to the same stimuli and accomplishes this by incorporating functional magnetic resonance imaging ([fMRI](https://en.wikipedia.org/wiki/Functional_magnetic_resonance_imaging)). Participants are exposed to multiple stimuli then asked, while inside an fMRI machine, to freely recall as much of the events as possible. After this audio is recorded, they are timestamped such that we can relate the segments of the audio to the imaging of the fMRI scans, then transcribed. After finishing the timestamps, her and her team began the transcription process and the matching of the content to events in the given TV shows and commercials; this task proved to be monotonous and time-consuming.
+
+Our team was tasked with automating the process of classifying the recall transcriptions to the content. We went about this task by incorporating an AI transcription tool, [Revoldiv](https://revoldiv.com), and an advanced NLP transformer, [DistilBERT](https://huggingface.co/docs/transformers/en/model_doc/distilbert), for the basis of our model. After transcribing the rest of the audio, preprocessing, and training, we have a final result. Our model is not as perfect as needed due to a noticeable limitation in available data, so the task still requires human intervention. We imagine that given more data, DistilBERT would prove to be a completely independent tool for this task.
+
+## Required Tools
+#### Some Used Dependencies/Modules:
   * **flask, flask_cors**
   * **nltk, nltk.tokenize**
   * **json**
   * **os**
   * **torch**
+
+#### Downloads:
+If you dont have it already, install Python [here](https://www.python.org/downloads/).
+
+Using **pip**:
+* `pip install transformers pandas numpy torch`
+
+Using **conda**:
+* `conda install -c conda-forge transformers pandas numpy`
+* `conda install pytorch -c pytorch`
+
+## Usage
 * Transcriptions were made with Revoldiv AI thus, functions handle a specific format.
   * Example transcription:
     <br><img width="343" alt="Screenshot 2024-08-06 at 9 53 01 AM" src="https://github.com/user-attachments/assets/c02d4e4d-10d4-4c21-9ec8-de328ac0b4a1">
