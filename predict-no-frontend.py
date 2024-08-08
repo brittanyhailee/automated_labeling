@@ -91,7 +91,7 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 new_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/new-transcripts'
-classified_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/c-transcripts'
+classified_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/classified-transcripts'
 
 for filename in os.listdir(new_transcriptions_path):
     file_path = os.path.join(new_transcriptions_path, filename)
@@ -104,12 +104,12 @@ for filename in os.listdir(new_transcriptions_path):
     file_path = os.path.join(new_transcriptions_path, filename)
     paragraph = transcript_to_paragraph(file_path, encoding)
     paragraph = sent_tokenize(paragraph)
+    output_filename = os.path.join(classified_transcriptions_path, filename.replace('transcript.txt', 'classified.txt'))
 
     for lines in paragraph: 
         classified = classify(lines)
-        output_filename = filename.replace('transcript.txt', 'classified.txt')
         with open(output_filename, 'a') as outfile:
-            outfile.write(lines + '\n' + classified + '\n' )
+            outfile.write(lines + '\n' + '\t-'+ classified + '\n' )
 
    
 
