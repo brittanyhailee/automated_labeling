@@ -7,7 +7,7 @@ Halle Dimsdale-Zucker of the UCR Psychology Dept. and her lab,  Dimsdale-Zucker 
 Our team was tasked with automating the process of classifying the recall transcriptions to the content. We went about this task by incorporating an AI transcription tool, [Revoldiv](https://revoldiv.com), and an advanced NLP transformer, [DistilBERT](https://huggingface.co/docs/transformers/en/model_doc/distilbert), for the basis of our model. After transcribing the rest of the audio, preprocessing, and training, we have a final result. Our model is not as perfect as needed due to a noticeable limitation in available data, so the task still requires human intervention. We imagine that given more data, DistilBERT would prove to be a completely independent tool for this task.
 
 ## Required Tools
-#### Some Used Dependencies/Modules:
+### Some Used Dependencies/Modules:
   * flask, flask_cors
   * nltk, nltk.tokenize
   * json
