@@ -8,11 +8,11 @@ Our team was tasked with automating the process of classifying the recall transc
 
 ## Required Tools
 #### Some Used Dependencies/Modules:
-  * **flask, flask_cors**
-  * **nltk, nltk.tokenize**
-  * **json**
-  * **os**
-  * **torch**
+  * flask, flask_cors
+  * nltk, nltk.tokenize
+  * json
+  * os
+  * torch
 
 ### Downloads:
 If you don't have it already, install Python [here](https://www.python.org/downloads/).
