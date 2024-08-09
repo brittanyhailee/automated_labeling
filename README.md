@@ -25,9 +25,9 @@ Using **conda**:
 * `conda install pytorch -c pytorch`
 
 ## Input Formatting
-Transcriptions made by Revoldiv are saved in a very unique format, as such the model accepts transcriptions in the following format:
+Transcriptions made by Revoldiv are saved in a very unique format, as such the model accepts transcriptions in the following format:<br>
 <br><img width="343" alt="Screenshot 2024-08-06 at 9 53 01 AM" src="https://github.com/user-attachments/assets/c02d4e4d-10d4-4c21-9ec8-de328ac0b4a1"><br>
-The program also handles transcriptions by Dr. Halle's team, which are in the following format:
+The program also handles transcriptions by Dr. Halle's team, which are in the following format:<br>
 <br><img width="421" alt="Screenshot 2024-08-06 at 10 51 39 PM" src="https://github.com/user-attachments/assets/346aa995-f429-40df-80e6-09904989a70f"> 
 ## Using the Fine-tuned Model with Front-end
 * Run `predict.py` to handle back-end processes.
