@@ -15,7 +15,7 @@ Our team was tasked with automating the process of classifying the recall transc
   * torch
 
 ### Necessary Downloads:
-If you don't have it already, install Python [here](https://www.python.org/downloads/).
+If you don't have it already, install Python [here](https://www.python.org/downloads/). Usually, installing Python also installs pip (Package Installer for Python) onto your system and is the case for downloading Python version 3.4 and later versions by default. 
 
 Using **pip**:
 * `pip install transformers pandas numpy torch`
@@ -31,7 +31,7 @@ The program also handles transcriptions by Dr. Halle's team, which are in the fo
 <br><img width="421" alt="Screenshot 2024-08-06 at 10 51 39 PM" src="https://github.com/user-attachments/assets/346aa995-f429-40df-80e6-09904989a70f"> 
 ## Using the Fine-tuned Model with Front-end
 * Run `predict.py` to handle back-end processes.
-  * Python backend is ready! <br><img width="490" alt="Screenshot 2024-08-06 at 10 12 04 AM" src="https://github.com/user-attachments/assets/73954842-3942-4a77-854f-140f66f2af31">
+  * After seeing this, the program is ready! <br><img width="490" alt="Screenshot 2024-08-06 at 10 12 04 AM" src="https://github.com/user-attachments/assets/73954842-3942-4a77-854f-140f66f2af31">
 
 * On VSCode, click <img width="79" alt="Screenshot 2024-08-06 at 9 34 47 AM" src="https://github.com/user-attachments/assets/598401e4-b4f7-4244-af7a-88013a8f483a"> to initialize the front-end.
   * Note: The ports used are `5500` and `5000`
