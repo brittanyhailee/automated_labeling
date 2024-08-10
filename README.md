@@ -39,4 +39,4 @@ The program also handles transcriptions by Dr. Halle's team, which are in the fo
 * Now, you will find your transcribed file in the folder "**classified-transcripts**"
 <br><img width="185" alt="Screenshot 2024-08-06 at 11 06 13 AM" src="https://github.com/user-attachments/assets/6d70cf5e-0236-41f9-a4fe-b1a62939ea9a">
 ## Webpage Preview
-<img width="1233" alt="Screenshot 2024-08-06 at 9 41 00 AM" src="https://github.com/user-attachments/assets/0b93f02b-cc61-4c60-9367-2b483a1eb2b9">
+<img width="1024" alt="Screenshot 2024-08-09 at 5 49 17 PM" src="https://github.com/user-attachments/assets/9485a053-bb59-46f1-b422-852a79d39b52">
