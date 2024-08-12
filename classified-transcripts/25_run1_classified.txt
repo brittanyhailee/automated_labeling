@@ -1,0 +1,96 @@
+It's not very clear with the sound of the scanner but do you want me to start saying like whatever I can recall?
+	-predicted class: panam_s01ep01_258-347_resized_1280-720
+
+Okay.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+So the TV shows were mostly from Fillmore and the Tribe.
+	-predicted class: fillmore_ep-7_236-406_part1_resized_1280-720
+
+So the Fillmore episode was mostly about the principal assigning a case to Fillmore and Ingrid about some TV show, I guess.
+	-predicted class: fillmore_ep-7_236-406_part1_resized_1280-720
+
+Like, it was not very clear with the sound of the scanner but that is what I could, make out from it.
+	-predicted class: the-tribe_episode-6_645-815_part1_resized_1280-720
+
+And they had 24 hours to solve the case.
+	-predicted class: pay-me-now_resized_1280-720
+
+In the chase or in the investigation, maybe they ended up, the the 2 of the friends of Ingrid and, Fillmore, they had a fight or something.
+	-predicted class: fillmore_ep-7_236-406_part2_resized_1280-720
+
+And, like, the girl in the green frog or the green dress, she, like, gave an interview like it seemed like a press conference or something.
+	-predicted class: cie-perfume_resized_1280-720
+
+So that was the episode of Fillmore about.
+	-predicted class: fillmore_ep-7_236-406_part1_resized_1280-720
+
+And in the tribe again, it seemed like the people the, children their were missing their parents And, like, in one the one of the kids like with their skates he had a picture of his family.
+	-predicted class: the-tribe_episode-1_1202-1332_part-1_resized_1280-720
+
+And in one of the scenes, it seemed like one of the children she she fell sick, and, some other a friend of her was tending to her.
+	-predicted class: the-tribe_episode-6_645-815_part2_resized_1280-720
+
+So that was a that is that is what the Tribe episode was about.
+	-predicted class: fillmore_ep-7_236-406_part2_resized_1280-720
+
+Since both the, shows were about with children, the children are the main audience for both the shows.
+	-predicted class: fillmore_ep-7_236-406_part2_resized_1280-720
+
+I felt that commercials which catered to children, were in good time slot, and the ones that did not were were in bad time slots.
+	-predicted class: corner-gas_s1-ep1_636-805_part2_resized_1280-720
+
+For example the commercial about some sandwich like that that had mustard and mayo or something.
+	-predicted class: the-tribe_episode-6_645-815_part1_resized_1280-720
+
+It felt like it was a commercial for a sandwich and so it would cater to the interest of children.
+	-predicted class: area-wide-exterminators_resized_1280-720
+
+So it was in good time slot.
+	-predicted class: fillmore_ep-14_828-958_part2_resized_1280-720
+
+The bowling commercial again, they had some discounts, and the commercial specifically mentioned that, kids are also welcome.
+	-predicted class: bowling_resized_1280-720
+
+So, again, that was in good time slot.
+	-predicted class: fillmore_ep-14_828-958_part2_resized_1280-720
+
+The commercial about the Chinese place, I guess, or some eatery with fresh ingredients plus vegetables, something.
+	-predicted class: china-star-delicious_resized_1280-720
+
+Again, that would cater to the interest of children so that was in good time slot.
+	-predicted class: fillmore_ep-7_236-406_part2_resized_1280-720
+
+So that the on the other hand, the commercials about I guess it was a car dealer with the Mitsubishi logo at the back.
+	-predicted class: cecil-myers_resized_1280-720
+
+I don't think that it would that has anything to do with children.
+	-predicted class: the-tribe_episode-6_645-815_part2_resized_1280-720
+
+That was not a good time slot.
+	-predicted class: fillmore_ep-14_828-958_part2_resized_1280-720
+
+The I think there was a commercial about fireworks as well.
+	-predicted class: bang-bang-boom-boom_resized_1280-720
+
+I don't think it would be very sensitive to put that, in the in like shows for children because it would not be safe and sensible to put it there.
+	-predicted class: the-tribe_episode-1_1202-1332_part-1_resized_1280-720
+
+That was not a good time slot.
+	-predicted class: fillmore_ep-14_828-958_part2_resized_1280-720
+
+Apart from that, yeah.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+So the one that, the ad about extension cord, I don't think that has that would interest children children a lot.
+	-predicted class: arctic-leash_resized_1280-720
+
+So, again, that was in bad time slot.
+	-predicted class: fillmore_ep-14_828-958_part2_resized_1280-720
+
+I guess that's all.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
+Yeah.
+	-predicted class: popular_ep-04_1332-1502_part2_resized_1280-720
+
