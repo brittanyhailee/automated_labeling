@@ -92,19 +92,19 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 print("Input the format of transcript file")
-fileformat = input("('c': csv, 't':txt) ")
+fileformat = input("\t('c': csv, 't':txt) ")
 
 if fileformat == 't': 
-    new_transcriptions_path = input("Enter folder path containing transcriptions by Revoldiv: ")
+    new_transcriptions_path = input("\nEnter folder path containing transcriptions by Revoldiv: ")
 
     while os.path.isdir(new_transcriptions_path) is False:
-        print(f"The path `{new_transcriptions_path}` does not exist.")
+        print(f"\nThe path `{new_transcriptions_path}` does not exist.")
         new_transcriptions_path = input("Enter folder path containing transcriptions by Revoldiv: ")
 
 
-    classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
+    classified_transcriptions_path = input("\nEnter path to store the classified transcripts: ")
     while os.path.isdir(classified_transcriptions_path) is False:
-        print(f"The path `{classified_transcriptions_path}` does not exist.")
+        print(f"\nThe path `{classified_transcriptions_path}` does not exist.")
         classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
 
     for filename in os.listdir(new_transcriptions_path):
@@ -121,16 +121,15 @@ if fileformat == 't':
 
 
 elif fileformat == 'c':
-    print('file format is csv')
     csv_transcriptions_path = input("Enter folder path containing transcriptions in .csv: ")
 
     while os.path.isdir(csv_transcriptions_path) is False:
-        print(f"The path `{csv_transcriptions_path}` does not exist.")
+        print(f"\nThe path `{csv_transcriptions_path}` does not exist.")
         csv_transcriptions_path = input("Enter folder path containing transcriptions in .csv: ")
 
-    classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
+    classified_transcriptions_path = input("\nEnter path to store the classified transcripts: ")
     while os.path.isdir(classified_transcriptions_path) is False:
-        print(f"The path `{classified_transcriptions_path}` does not exist.")
+        print(f"\nThe path `{classified_transcriptions_path}` does not exist.")
         classified_transcriptions_path = input("Enter path to store classified transcripts: ")
 
     for filename in os.listdir(csv_transcriptions_path):
