@@ -90,30 +90,44 @@ categories = ['fillmore_ep-7_236-406_part1_resized_1280-720',
  'henry-beer-commercial_resized_1280-720']
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-new_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/new-transcripts'
-classified_transcriptions_path = '/Users/brittany/Desktop/DS_Fellowship/automated_labeling/classified-transcripts'
+print("Input the format of transcript file")
+fileformat = input("('c': csv, 't':txt) ")
 
-for filename in os.listdir(new_transcriptions_path):
-    file_path = os.path.join(new_transcriptions_path, filename)
-    encoding = detect_encoding(file_path)
-    print(f'the encoding is {encoding}')
+if fileformat == 't': 
+    new_transcriptions_path = input("Enter folder path containing transcriptions by Revoldiv: ")
 
-
-for filename in os.listdir(new_transcriptions_path):
-    encoding = detect_encoding(file_path)
-    file_path = os.path.join(new_transcriptions_path, filename)
-    paragraph = transcript_to_paragraph(file_path, encoding)
-    paragraph = sent_tokenize(paragraph)
-    output_filename = os.path.join(classified_transcriptions_path, filename.replace('transcript.txt', 'classified.txt'))
-
-    for lines in paragraph: 
-        classified = classify(lines)
-        with open(output_filename, 'a') as outfile:
-            outfile.write(lines + '\n' + '\t-'+ classified + '\n' )
-
-   
+    while os.path.isdir(new_transcriptions_path) is False:
+        print(f"The path `{new_transcriptions_path}` does not exist.")
+        new_transcriptions_path = input("Enter folder path containing transcriptions by Revoldiv: ")
 
 
+    classified_transcriptions_path = input("Enter path of where you want to store the classified transcripts: ")
+    while os.path.isdir(classified_transcriptions_path) is False:
+        print(f"The path `{classified_transcriptions_path}` does not exist.")
+        classified_transcriptions_path = input("Enter path of where you want to store the classified transcripts: ")
 
+            
+    print("BOTH EXISTS!")
+
+    for filename in os.listdir(new_transcriptions_path):
+        file_path = os.path.join(new_transcriptions_path, filename)
+        encoding = detect_encoding(file_path)
+        paragraph = transcript_to_paragraph(file_path, encoding)
+        paragraph = sent_tokenize(paragraph)
+        output_filename = os.path.join(classified_transcriptions_path, filename.replace('transcript.txt', 'classified.txt'))
+
+        for lines in paragraph: 
+            classified = classify(lines)
+            with open(output_filename, 'a') as outfile:
+                outfile.write(lines + '\n' + '\t-'+ classified + '\n' )
+
+
+elif fileformat == 'c':
+    print('file format is csv')
 
     
+
+
+
+
+        
