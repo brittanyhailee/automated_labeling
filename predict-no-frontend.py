@@ -10,6 +10,7 @@ import os
 import torch
 import numpy as np
 import chardet
+import pandas as pd
 
 def detect_encoding(file_path):
     with open(file_path, 'rb') as file: 
@@ -101,13 +102,10 @@ if fileformat == 't':
         new_transcriptions_path = input("Enter folder path containing transcriptions by Revoldiv: ")
 
 
-    classified_transcriptions_path = input("Enter path of where you want to store the classified transcripts: ")
+    classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
     while os.path.isdir(classified_transcriptions_path) is False:
         print(f"The path `{classified_transcriptions_path}` does not exist.")
-        classified_transcriptions_path = input("Enter path of where you want to store the classified transcripts: ")
-
-            
-    print("BOTH EXISTS!")
+        classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
 
     for filename in os.listdir(new_transcriptions_path):
         file_path = os.path.join(new_transcriptions_path, filename)
@@ -124,8 +122,36 @@ if fileformat == 't':
 
 elif fileformat == 'c':
     print('file format is csv')
+    csv_transcriptions_path = input("Enter folder path containing transcriptions in .csv: ")
 
-    
+    while os.path.isdir(csv_transcriptions_path) is False:
+        print(f"The path `{csv_transcriptions_path}` does not exist.")
+        csv_transcriptions_path = input("Enter folder path containing transcriptions in .csv: ")
+
+    classified_transcriptions_path = input("Enter path to store the classified transcripts: ")
+    while os.path.isdir(classified_transcriptions_path) is False:
+        print(f"The path `{classified_transcriptions_path}` does not exist.")
+        classified_transcriptions_path = input("Enter path to store classified transcripts: ")
+
+    for filename in os.listdir(csv_transcriptions_path):
+        file_path = os.path.join(csv_transcriptions_path, filename)
+        transcript_df = pd.read_csv(file_path)
+        labels = ['run_ID', 'segment_name']
+        transcript_df.drop(labels, axis=1,inplace=True)
+        transcript_df.dropna(subset=['text'], inplace=True)
+
+        output_filename = filename.replace('.csv', '(classified).csv')
+        output_filename = os.path.join(classified_transcriptions_path, output_filename)
+  
+        new_df = pd.DataFrame(columns=['starttime', 'endtime','segment_id','text'])
+        rows = []
+
+        for index, row in transcript_df.iterrows():
+            sentence = row['text']
+            rows.append({'starttime': str(row['starttime']), 'endtime': str(row['endtime']),'segment_id': classify(sentence), 'text': row['text']})
+        new_df = pd.concat([new_df, pd.DataFrame(rows)], ignore_index=True)
+        new_df.to_csv(output_filename, index=False)
+
 
 
 
