@@ -13,6 +13,8 @@ Our team was tasked with automating the process of classifying the recall transc
   * json
   * os
   * torch
+  * pandas
+  * chardet
 
 ### Necessary Downloads:
 If you don't have it already, install Python [here](https://www.python.org/downloads/). Usually, installing Python also installs pip (Package Installer for Python) onto your system and is the case for downloading Python version 3.4 and later versions by default. 
@@ -44,3 +46,16 @@ The program also handles transcriptions by Dr. Halle's team, which are in the fo
 ## Using `predict-no-frontend.py`
 * As the name suggests, this program does not require you to run a front-end program simultaneously with the backend, enabling you to do everything in your text editor.
 * The program asks the user whether their transcription file is in CSV or TXT (format of transcription made with Revoldiv AI) and will ask the user to enter the path (NOT relative path) to the folder containing the transcriptions.
+### Enter transcription format
+* Enter 'c' for CSV or 't' for TXT. 
+<br><img width="270" alt="Screenshot 2024-08-18 at 8 25 49 PM" src="https://github.com/user-attachments/assets/80ca9c8c-099f-4fb1-b56c-6f48460683bd">
+### Enter the path to the transcription folder
+* Ensure that the folder is inside the same directory as the program and that the path is <i>not</i> the relative path.
+<br><img width="898" alt="Screenshot 2024-08-18 at 8 27 49 PM" src="https://github.com/user-attachments/assets/487fd70a-75c5-48d7-9688-f2f426ad0e8a">
+### Enter the path to the folder where you would like to store the classified transcripts
+<img width="898" alt="Screenshot 2024-08-18 at 8 36 26 PM" src="https://github.com/user-attachments/assets/ada2d7c3-31ea-4ee6-84b5-2b9196911ced"><br>
+### You have your newly classified transcripts!
+* Now, you will find the classified transcripts in the folder you provided above!
+<img width="232" alt="Screenshot 2024-08-18 at 8 38 15 PM" src="https://github.com/user-attachments/assets/ca226a3d-c1d5-40ea-9c17-7c1cc19167ce">
+
+
