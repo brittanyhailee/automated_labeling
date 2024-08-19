@@ -40,3 +40,7 @@ The program also handles transcriptions by Dr. Halle's team, which are in the fo
 <br><img width="185" alt="Screenshot 2024-08-06 at 11 06 13 AM" src="https://github.com/user-attachments/assets/6d70cf5e-0236-41f9-a4fe-b1a62939ea9a">
 ## Webpage Preview
 <img width="1024" alt="Screenshot 2024-08-09 at 5 49 17 PM" src="https://github.com/user-attachments/assets/9485a053-bb59-46f1-b422-852a79d39b52">
+
+## Using `predict-no-frontend.py`
+* As the name suggests, this program does not require you to run a front-end program simultaneously with the backend, enabling you to do everything in your text editor.
+* The program asks the user whether their transcription file is in CSV or TXT (format of transcription made with Revoldiv AI) and will ask the user to enter the path (NOT relative path) to the folder containing the transcriptions.
